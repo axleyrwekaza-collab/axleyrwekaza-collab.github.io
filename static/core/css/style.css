@@ -1,0 +1,63 @@
+/* Shared styles Tailwind cannot handle */
+
+/* Hero background */
+.hero-bg {
+  background:
+    linear-gradient(135deg, rgba(42,42,42,0.72) 0%, rgba(59,107,138,0.35) 60%, rgba(42,42,42,0.80) 100%),
+    url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1600&q=80') center/cover no-repeat;
+}
+
+/* Reservation section background */
+.reservation-bg {
+  background:
+    linear-gradient(to right, rgba(42,42,42,0.92), rgba(59,107,138,0.8)),
+    url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=80') center/cover no-repeat;
+}
+
+/* Decorative gold border behind experience image */
+.exp-image-wrap { position: relative; }
+.exp-image-wrap::before {
+  content: '';
+  position: absolute;
+  top: -20px; right: -20px;
+  width: 80%; height: 80%;
+  border: 1px solid #b5893e;
+  border-radius: 4px;
+  z-index: 0;
+}
+.exp-image-wrap img { position: relative; z-index: 1; }
+
+/* Scroll indicator */
+.scroll-line {
+  width: 1px; height: 48px;
+  background: linear-gradient(to bottom, rgba(245,240,232,0.5), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+/* Hero animation */
+.animate-fadeUp { animation: fadeUp 1.2s ease both; }
+
+/* Reservation form inputs */
+.res-field {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: white;
+  padding: 0.75rem 1.2rem;
+  font-size: 0.88rem;
+  border-radius: 4px;
+  outline: none;
+  flex: 1 1 160px;
+  min-width: 140px;
+  transition: border-color 0.35s ease;
+}
+.res-field::placeholder { color: rgba(255,255,255,0.5); }
+.res-field:focus { border-color: #b5893e; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.4; }
+  50%       { opacity: 1; }
+}

@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{% block title %}Maison Dorée – Fine Dining Kigali{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+  {% block extra_css %}{% endblock %}
+</head>
+<body class="bg-[#faf7f2] text-[#2a2a2a] font-['Jost',sans-serif] font-light leading-relaxed">
+
+  <!-- ── NAVBAR ── -->
+  <nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-[5vw] py-5 bg-[rgba(42,42,42,0.96)] backdrop-blur-md">
+    <a href="{% url 'Homepage' %}" class="flex items-center gap-2 font-['Cormorant_Garamond',serif] text-2xl font-semibold text-[#f5f0e8] tracking-wide">
+      <img src="{% static 'core/images/logo.png' %}" alt="Maison Dorée Logo" class="w-10 h-10 object-contain">
+      Maison<span class="text-[#b5893e]">Dorée</span>
+    </a>
+    <ul class="hidden md:flex gap-10 items-center">
+      <li><a href="{% url 'Homepage' %}" class="text-xs tracking-[0.18em] uppercase text-[#e8dece] hover:text-[#b5893e] transition-colors {% block active_home %}{% endblock %}">Home</a></li>
+      <li><a href="{% url 'Homepage' %}#menu" class="text-xs tracking-[0.18em] uppercase text-[#e8dece] hover:text-[#b5893e] transition-colors">Menu</a></li>
+      <li><a href="{% url 'About' %}" class="text-xs tracking-[0.18em] uppercase text-[#e8dece] hover:text-[#b5893e] transition-colors {% block active_about %}{% endblock %}">About Us</a></li>
+      <li><a href="{% url 'Homepage' %}#reserve" class="text-xs tracking-[0.18em] uppercase text-[#b5893e] border border-[#b5893e] px-5 py-2 rounded hover:bg-[#b5893e] hover:text-[#2a2a2a] transition-all">Reserve a Table</a></li>
+    </ul>
+    <!-- Hamburger -->
+    <label class="md:hidden flex flex-col gap-1.5 cursor-pointer" for="menu-toggle">
+      <span class="block w-6 h-0.5 bg-[#f5f0e8] rounded"></span>
+      <span class="block w-6 h-0.5 bg-[#f5f0e8] rounded"></span>
+      <span class="block w-6 h-0.5 bg-[#f5f0e8] rounded"></span>
+    </label>
+    <input type="checkbox" id="menu-toggle" class="hidden peer" />
+    <div class="hidden peer-checked:flex flex-col fixed top-16 left-0 right-0 bg-[rgba(42,42,42,0.98)] px-[5vw] py-6 gap-4 z-40">
+      <a href="{% url 'Homepage' %}" class="text-sm tracking-[0.18em] uppercase text-[#e8dece] py-2 border-b border-white/10 hover:text-[#b5893e] transition-colors">Home</a>
+      <a href="{% url 'Homepage' %}#menu" class="text-sm tracking-[0.18em] uppercase text-[#e8dece] py-2 border-b border-white/10 hover:text-[#b5893e] transition-colors">Menu</a>
+      <a href="{% url 'About' %}" class="text-sm tracking-[0.18em] uppercase text-[#e8dece] py-2 border-b border-white/10 hover:text-[#b5893e] transition-colors">About Us</a>
+      <a href="{% url 'Homepage' %}#reserve" class="text-sm tracking-[0.18em] uppercase text-[#b5893e] py-2">Reserve a Table</a>
+    </div>
+  </nav>
+
+  <!-- ── PAGE CONTENT ── -->
+  {% block content %}{% endblock %}
+
+  <!-- ── FOOTER ── -->
+  <footer class="bg-[#2a2a2a] text-[#e8dece] px-[5vw] pt-20 pb-10">
+    <div class="grid md:grid-cols-4 gap-12 max-w-6xl mx-auto mb-16">
+      <div>
+        <a href="{% url 'Homepage' %}" class="flex items-center gap-2 font-['Cormorant_Garamond',serif] text-2xl font-semibold text-[#f5f0e8] tracking-wide mb-4">
+          <img src="{% static 'core/images/logo.png' %}" alt="Logo" class="w-8 h-8 object-contain">
+          Maison<span class="text-[#b5893e]">Dorée</span>
+        </a>
+        <p class="text-sm text-white/40 leading-relaxed max-w-xs">A celebration of French culinary heritage, crafted with passion in the heart of Kigali since 2025.</p>
+      </div>
+      <div>
+        <h4 class="text-xs tracking-[0.25em] uppercase text-[#b5893e] mb-5">Navigate</h4>
+        <ul class="flex flex-col gap-3">
+          <li><a href="{% url 'Homepage' %}" class="text-sm text-white/65 hover:text-[#f5f0e8] transition-colors">Home</a></li>
+          <li><a href="{% url 'Homepage' %}#menu" class="text-sm text-white/65 hover:text-[#f5f0e8] transition-colors">Menu</a></li>
+          <li><a href="{% url 'About' %}" class="text-sm text-white/65 hover:text-[#f5f0e8] transition-colors">About Us</a></li>
+          <li><a href="{% url 'Homepage' %}#reserve" class="text-sm text-white/65 hover:text-[#f5f0e8] transition-colors">Reserve</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-xs tracking-[0.25em] uppercase text-[#b5893e] mb-5">Hours</h4>
+        <ul class="flex flex-col gap-3 text-sm text-white/65">
+          <li>Mon–Fri: 12pm – 11pm</li>
+          <li>Sat: 11am – 11:30pm</li>
+          <li>Sun: 11am – 10pm</li>
+          <li>Private Events: On Request</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-xs tracking-[0.25em] uppercase text-[#b5893e] mb-5">Find Us</h4>
+        <address class="not-italic text-sm text-white/65 leading-8">
+          KG 7 Ave, Kiyovu<br>
+          Kigali, Rwanda<br>
+          +250 788 123 456<br>
+          hello@maisondoree.rw
+        </address>
+      </div>
+    </div>
+    <div class="max-w-6xl mx-auto pt-6 border-t border-white/10 flex flex-wrap justify-between gap-4 text-xs text-white/30">
+      <span>&copy; 2025 Maison Dorée Kigali. All rights reserved.</span>
+      <span>Crafted with passion in Rwanda</span>
+    </div>
+  </footer>
+
+</body>
+</html>
