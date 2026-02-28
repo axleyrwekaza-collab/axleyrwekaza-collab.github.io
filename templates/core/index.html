@@ -3,10 +3,11 @@
 
 {% block title %}Maison Dorée – Fine Dining Kigali{% endblock %}
 {% block active_home %}text-[#b5893e]{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'core/css/style.css' %}">{% endblock %}
 
 {% block content %}
 
-  <!-- HERO -->
+
   <section class="hero-bg relative min-h-screen flex items-center overflow-hidden">
     <div class="relative z-10 max-w-2xl px-[5vw] animate-fadeUp">
       <span class="inline-block text-xs tracking-[0.28em] uppercase text-[#b5893e] mb-5 border-l-2 border-[#b5893e] pl-3">Fine Dining · Now Open in Kigali</span>
@@ -23,7 +24,7 @@
     </div>
   </section>
 
-  <!-- INTRO BAND -->
+
   <div class="bg-[#2a2a2a] text-[#e8dece] px-[5vw] py-9 flex justify-center gap-10 flex-wrap">
     <div class="flex items-center gap-3 text-xs tracking-[0.12em] uppercase">
       <svg class="w-5 h-5 fill-[#b5893e] shrink-0" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
@@ -81,8 +82,7 @@
         </div>
       </div>
       <div class="bg-white/5 border border-white/10 rounded overflow-hidden hover:-translate-y-1.5 hover:shadow-2xl transition-all">
-        <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3b72?w=600&q=80" alt="Bisque" class="w-full h-56 object-cover brightness-90 hover:brightness-100 transition-all">
-        <div class="p-6">
+          <img src="https://56d3203e.delivery.rocketcdn.me/wp-content/uploads/2022/03/Langostino-Bisque-1-1-scaled.jpg" alt="Duck Confit" class="w-full h-56 object-cover brightness-90 hover:brightness-100 transition-all">        <div class="p-6">
           <p class="text-xs tracking-[0.2em] uppercase text-[#b5893e] mb-2">Signature Starter</p>
           <h3 class="font-['Cormorant_Garamond',serif] text-2xl font-normal text-[#f5f0e8] mb-2">Langoustine Bisque</h3>
           <p class="text-sm text-white/60 leading-relaxed">Velvety bisque with saffron cream, Cognac and hand-dived langoustine tails.</p>

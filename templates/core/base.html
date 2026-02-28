@@ -9,21 +9,20 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
-  {% block extra_css %}{% endblock %}
 </head>
 <body class="bg-[#faf7f2] text-[#2a2a2a] font-['Jost',sans-serif] font-light leading-relaxed">
 
   <!-- ── NAVBAR ── -->
   <nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-[5vw] py-5 bg-[rgba(42,42,42,0.96)] backdrop-blur-md">
-    <a href="{% url 'Homepage' %}" class="flex items-center gap-2 font-['Cormorant_Garamond',serif] text-2xl font-semibold text-[#f5f0e8] tracking-wide">
-      <img src="{% static 'core/images/logo.png' %}" alt="Maison Dorée Logo" class="w-10 h-10 object-contain">
+    <a href="{% url 'Homepage' %}" class="flex items-center gap-3 font-['Cormorant_Garamond',serif] text-2xl font-semibold text-[#f5f0e8] tracking-wide">
+      <img src="{% static 'core/images/logo.png' %}" alt="Maison Dorée Logo" class="h w-20">
       Maison<span class="text-[#b5893e]">Dorée</span>
     </a>
     <ul class="hidden md:flex gap-10 items-center">
       <li><a href="{% url 'Homepage' %}" class="text-xs tracking-[0.18em] uppercase text-[#e8dece] hover:text-[#b5893e] transition-colors {% block active_home %}{% endblock %}">Home</a></li>
       <li><a href="{% url 'Homepage' %}#menu" class="text-xs tracking-[0.18em] uppercase text-[#e8dece] hover:text-[#b5893e] transition-colors">Menu</a></li>
       <li><a href="{% url 'About' %}" class="text-xs tracking-[0.18em] uppercase text-[#e8dece] hover:text-[#b5893e] transition-colors {% block active_about %}{% endblock %}">About Us</a></li>
+        <li><a href="{% url 'Homepage' %}#contact" class="text-xs tracking-[0.18em] uppercase text-[#e8dece] hover:text-[#b5893e] transition-colors">Contact Us</a></li>
       <li><a href="{% url 'Homepage' %}#reserve" class="text-xs tracking-[0.18em] uppercase text-[#b5893e] border border-[#b5893e] px-5 py-2 rounded hover:bg-[#b5893e] hover:text-[#2a2a2a] transition-all">Reserve a Table</a></li>
     </ul>
     <!-- Hamburger -->
@@ -37,6 +36,7 @@
       <a href="{% url 'Homepage' %}" class="text-sm tracking-[0.18em] uppercase text-[#e8dece] py-2 border-b border-white/10 hover:text-[#b5893e] transition-colors">Home</a>
       <a href="{% url 'Homepage' %}#menu" class="text-sm tracking-[0.18em] uppercase text-[#e8dece] py-2 border-b border-white/10 hover:text-[#b5893e] transition-colors">Menu</a>
       <a href="{% url 'About' %}" class="text-sm tracking-[0.18em] uppercase text-[#e8dece] py-2 border-b border-white/10 hover:text-[#b5893e] transition-colors">About Us</a>
+        <a href="{% url 'Homepage' %}#contact" class="text-sm tracking-[0.18em] uppercase text-[#e8dece] py-2 border-b border-white/10 hover:text-[#b5893e] transition-colors">Contact Us</a>
       <a href="{% url 'Homepage' %}#reserve" class="text-sm tracking-[0.18em] uppercase text-[#b5893e] py-2">Reserve a Table</a>
     </div>
   </nav>
@@ -49,7 +49,7 @@
     <div class="grid md:grid-cols-4 gap-12 max-w-6xl mx-auto mb-16">
       <div>
         <a href="{% url 'Homepage' %}" class="flex items-center gap-2 font-['Cormorant_Garamond',serif] text-2xl font-semibold text-[#f5f0e8] tracking-wide mb-4">
-          <img src="{% static 'core/images/logo.png' %}" alt="Logo" class="w-8 h-8 object-contain">
+          <img src="{% static 'core/images/logo.png' %}" alt="Logo" class="w-20">
           Maison<span class="text-[#b5893e]">Dorée</span>
         </a>
         <p class="text-sm text-white/40 leading-relaxed max-w-xs">A celebration of French culinary heritage, crafted with passion in the heart of Kigali since 2025.</p>
