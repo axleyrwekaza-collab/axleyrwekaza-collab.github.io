@@ -5,7 +5,7 @@
 .about-hero-bg {
   background:
     linear-gradient(to bottom, rgba(42,42,42,0.65) 0%, rgba(42,42,42,0.85) 100%),
-    url('/static/core/images/cafe.jpg') center/cover no-repeat;
+    url('../images/cafe.jpg') center/cover no-repeat;
 }
 
 /* Timeline */
