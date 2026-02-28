@@ -2,18 +2,19 @@
 
 /* Hero background */
 
+/* Hero background */
 .about-hero-bg {
   background:
     linear-gradient(to bottom, rgba(42,42,42,0.65) 0%, rgba(42,42,42,0.85) 100%),
-    url('../images/hero.jpg') center/cover no-repeat;
+    url('/static/core/images/hero.jpg') center/cover no-repeat;
 }
+
 /* Reservation section background */
 .reservation-bg {
   background:
     linear-gradient(to right, rgba(42,42,42,0.92), rgba(59,107,138,0.8)),
-    url('../images/food.jpg') center/cover no-repeat;
+    url('/static/core/images/food.jpg') center/cover no-repeat;
 }
-
 /* Decorative gold border behind experience image */
 .exp-image-wrap { position: relative; }
 .exp-image-wrap::before {
